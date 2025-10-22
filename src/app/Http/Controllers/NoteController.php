@@ -17,8 +17,8 @@ class NoteController extends Controller
 
     }
 
-    public function create() 
+    public function create() //return view with the current user
     {
-
+        return view('create_note');
     }
 }

@@ -9,7 +9,4 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [NoteController::class, 'index']);
-
-Route::get('/create', function () {
-    return view('create');
-});
+Route::get('/create', [NoteController::class, 'create']);

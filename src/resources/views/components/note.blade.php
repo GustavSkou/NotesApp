@@ -5,7 +5,5 @@
         {{$note->name}}
     </h1>
     
-    <p>
-        {{$note->contents}}
-    </p>
+    <p>{{$note->contents}}</p>
 </div>
