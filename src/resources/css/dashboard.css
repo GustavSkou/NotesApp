@@ -1,0 +1,16 @@
+.note-list {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.note-list li {
+    width: fit-content;
+    align-content: center;
+    list-style: none;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
