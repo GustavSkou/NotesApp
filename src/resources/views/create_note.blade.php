@@ -2,19 +2,20 @@
 <x-navigation_bar></x-navigation_bar>
 
 
-    <form action="" method="post" class="flex flex-col gap-4 max-w-xl mx-auto mt-6">
+    <form action="{{ route('notes.store') }}" method="POST" class="flex flex-col gap-4 max-w-xl mx-auto mt-6">
+        @csrf
         <div class="flex flex-col">
-            <label for="name">Note name</label>
+            <label name="name" id="name" for="name">Note name</label>
             <input 
                 type="text"
                 name="name"
                 id="name"
                 class="border rounded px-3 py-2 w-full"
-            ></input>
+            />
         </div>
 
         <div class="flex flex-col">
-            <label for="contents">Contents</label>
+            <label name="contents" id="contents" for="contents">Contents</label>
             <textarea 
                 rows="5"
                 name="contents"

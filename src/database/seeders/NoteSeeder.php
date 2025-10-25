@@ -14,13 +14,14 @@ class NoteSeeder extends Seeder
      */
     public function run(): void
     {
+        Note::factory(10)->create();
+        /*
         $users = User::All();
 
-        for ($i = 0; $i < 10; $i++)
-        {
+        for ($i = 0; $i < 10; $i++) {
             Note::factory()->create([
                 'created_by' => fake()->randomElement($users)
             ]);
-        }
+        }*/
     }
 }

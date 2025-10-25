@@ -18,7 +18,7 @@ class NoteFactory extends Factory
     {
         return [
             'name' => 'note',
-            'created_by' => 1,
+            //'created_by' => 1,
             'contents' => fake()->text()
         ];
     }
