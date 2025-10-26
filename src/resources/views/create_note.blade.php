@@ -1,7 +1,6 @@
 <x-html_body>
 <x-navigation_bar></x-navigation_bar>
 
-
     <form action="{{ route('notes.store') }}" method="POST" class="flex flex-col gap-4 max-w-xl mx-auto mt-6">
         @csrf
         <div class="flex flex-col">
@@ -10,6 +9,7 @@
                 type="text"
                 name="name"
                 id="name"
+                required="required"
                 class="border rounded px-3 py-2 w-full"
             />
         </div>
