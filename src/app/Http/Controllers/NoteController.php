@@ -14,10 +14,10 @@ class NoteController extends Controller
         return view('dashboard', ['notes' => $notes]);
     }
 
-    public function show($id)
+    // use route-model binding so $note is an instance of Models\Note
+    public function show(Note $note)
     {
-        $note = Note::findOrFail($id);
-        return view('notes', ['note', $note]);
+        return view('notes', ['note' => $note]);
     }
 
     public function create() //return view with the current user
@@ -35,6 +35,16 @@ class NoteController extends Controller
         ]);
 
         Note::create($validated);
+        return redirect()->route('notes.index');
+    }
+
+    public function update(Request $request, Note $note)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'contents' => 'required|string|max:1000',
+        ]);
+        $note->update($validated);
         return redirect()->route('notes.index');
     }
 }
