@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Chapter;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Note;
@@ -14,14 +15,12 @@ class NoteSeeder extends Seeder
      */
     public function run(): void
     {
-        Note::factory(10)->create();
-        /*
-        $users = User::All();
+        $chapters = Chapter::all();
 
-        for ($i = 0; $i < 10; $i++) {
-            Note::factory()->create([
-                'created_by' => fake()->randomElement($users)
+        foreach ($chapters as $chapter) {
+            Note::factory(10)->create([
+                'chapter_id' => $chapter
             ]);
-        }*/
+        }
     }
 }

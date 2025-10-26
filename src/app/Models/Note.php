@@ -17,7 +17,7 @@ class Note extends Model
      */
     protected $fillable = [
         'name',
-        'contents'
-        //'chapter_id'
+        'contents',
+        'chapter_id'
     ];
 }

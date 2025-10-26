@@ -17,7 +17,10 @@ class DatabaseSeeder extends Seeder
         $this->call(
             [
                 UserSeeder::class,
+                NoteBookSeeder::class,
+                ChapterSeeder::class,
                 NoteSeeder::class,
-            ]);
+            ]
+        );
     }
 }

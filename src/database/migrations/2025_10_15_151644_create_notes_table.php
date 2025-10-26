@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('contents')->nullable();
-            //$table->foreignId('chapter_id')->constrained('chapters')->cascadeOnDelete();
+            $table->foreignId('chapter_id')->constrained('chapters')->cascadeOnDelete();
             $table->timestamps();
         });
     }
