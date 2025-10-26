@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notes', function (Blueprint $table) {
+        Schema::create('chapters', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('contents')->nullable();
-            //$table->foreignId('chapter_id')->constrained('chapters')->cascadeOnDelete();
             $table->timestamps();
+            $table->string('name');
+            $table->foreignId('note_book_id')->constrained('note_books')->cascadeOnDelete();
         });
     }
 
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notes');
+        Schema::dropIfExists('chapters');
     }
 };

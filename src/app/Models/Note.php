@@ -18,6 +18,6 @@ class Note extends Model
     protected $fillable = [
         'name',
         'contents'
-        //'created_by'
+        //'chapter_id'
     ];
 }
