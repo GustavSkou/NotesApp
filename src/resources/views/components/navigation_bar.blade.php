@@ -2,10 +2,10 @@
 <header>
     <ul class='navigation-bar'>
         <li>
-            <a href="/">Dashboard</a>
+            <a href="{{route('notes.index')}}">Dashboard</a>
         </li>
         <li>
-            <a href="/create">Create note</a>
+            <a href="{{route('notes.create')}}">Create note</a>
         </li>
     </ul>
 </header>

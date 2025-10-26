@@ -1,9 +1,10 @@
 @vite('resources\css\note.css')
 
 <div class="note">
-    <h1 class="text-3xl md:text-3xl font-bold leading-tight">
+<!--pass the note into the notes route-->
+    <a class="text-3xl md:text-3xl font-bold leading-tight" href="{{route('notes.show', $note) }}">
         {{$note->name}}
-    </h1>
+    </a>
     
     <p>{{$note->contents}}</p>
 </div>
