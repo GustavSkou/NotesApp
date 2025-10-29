@@ -14,4 +14,15 @@ class Chapter extends Model
         "name",
         "note_book_id"
     ];
+
+    public function notes()
+    {
+        // match chapter's own id to the foreignKey chapter_id in Note
+        return $this->hasMany(Note::class, 'chapter_id');
+    }
+
+    public function noteBook()
+    {
+        return $this->belongsTo(NoteBook::class, 'note_book_id');
+    }
 }

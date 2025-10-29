@@ -15,15 +15,17 @@
                 required="required"
             >{{ $note->name }}</textarea>
         </div>
+        <label>Chapter: {{ $note->chapter->name }} </label>
+        <label>Notebook: {{ $note->chapter->noteBook->name }} </label>
 
         <div class="flex flex-col">
             <textarea 
                 rows="5"
                 name="contents"
                 id="contents"
-                class="border-0 border-b-1 px-3 py-2 w-full"
+                class="border-0 px-3 py-2 w-full" 
             >{{ $note->contents }}</textarea>
-        </div>
+        </div><!--border-b-1-->
 
         <div class="flex justify-end">
             <input type="submit" class="btn mt-4" />

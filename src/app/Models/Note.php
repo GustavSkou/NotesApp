@@ -17,7 +17,13 @@ class Note extends Model
      */
     protected $fillable = [
         'name',
-        'contents'
-        //'chapter_id'
+        'contents',
+        'chapter_id'
     ];
+
+    public function chapter()
+    {
+        // match chapter's id to chapter_id
+        return $this->belongsTo(Chapter::class, 'chapter_id');
+    }
 }
