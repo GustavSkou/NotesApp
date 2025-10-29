@@ -20,4 +20,10 @@ class Note extends Model
         'contents',
         'chapter_id'
     ];
+
+    public function chapter()
+    {
+        // match chapter's id to chapter_id
+        return $this->belongsTo(Chapter::class, 'chapter_id');
+    }
 }

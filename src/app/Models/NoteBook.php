@@ -13,4 +13,9 @@ class NoteBook extends Model
     protected $fillable = [
         "name"
     ];
+
+    public function chapters()
+    {
+        return $this->hasMany(Chapter::class, 'note_book_id');
+    }
 }
