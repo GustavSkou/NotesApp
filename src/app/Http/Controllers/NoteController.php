@@ -19,13 +19,21 @@ class NoteController extends Controller
     public function index(NoteBook $notebook, Chapter $chapter)
     {
         $notes = $chapter->notes()->get();
-        return view('note_index', ['notes' => $notes]);
+        return view('note_index', [
+            'notebook' => $notebook,
+            'chapter' => $chapter,
+            'notes' => $notes
+        ]);
     }
 
     // use route-model binding so $note is an instance of Models\Note
     public function show(NoteBook $notebook, Chapter $chapter, Note $note)
     {
-        return view('notes', ['note' => $note]);
+        return view('notes', [
+            'notebook' => $notebook,
+            'chapter' => $chapter,
+            'note' => $note
+        ]);
     }
 
     public function create() //return view with the current user

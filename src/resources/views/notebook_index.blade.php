@@ -2,11 +2,11 @@
     <x-navigation_bar></x-navigation_bar>
     @vite('resources\css\dashboard.css')
     <ul class='note-list'>
-        @foreach ($noteBooks as $noteBook)
+        @foreach ($notebooks as $notebook)
         <li>
             <div>
-                <a href="{{ route( 'chapter.index', $noteBook ) }}">
-                    {{$noteBook->name}}
+                <a href="{{ route( 'chapter.index', $notebook ) }}">
+                    {{$notebook->name}}
                 </a>
             </div>
         </li>

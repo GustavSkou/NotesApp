@@ -5,7 +5,11 @@
     <ul class='note-list'>
         @foreach($notes as $note)
         <li>
-            <x-note :note="$note"></x-note>
+            <x-note
+                :note="$note"
+                :notebook="$notebook"
+                :chapter="$chapter"
+            />
         </li>
         @endforeach
     </ul>

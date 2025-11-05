@@ -9,8 +9,8 @@ class NoteBookController extends Controller
 {
     public function index()
     {
-        $noteBooks = NoteBook::all();
-        return view('notebook_index', ['noteBooks' => $noteBooks]);
+        $notebooks = NoteBook::all();
+        return view('notebook_index', ['notebooks' => $notebooks]);
     }
 
     public function show() {}
