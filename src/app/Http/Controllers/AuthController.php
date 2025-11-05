@@ -21,7 +21,6 @@ class AuthController extends Controller
 
     public function Register(Request $request)
     {
-        //returns key value pairs
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users',

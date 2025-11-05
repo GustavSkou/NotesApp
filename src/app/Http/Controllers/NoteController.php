@@ -10,12 +10,6 @@ use App\Models\User;
 
 class NoteController extends Controller
 {
-    /*public function index()
-    {
-        $notes = Note::select('*')->orderBy('updated_at', 'desc')->paginate(10);
-        return view('dashboard', ['notes' => $notes]);
-    }*/
-
     public function index(NoteBook $notebook, Chapter $chapter)
     {
         $notes = $chapter->notes()->get();
