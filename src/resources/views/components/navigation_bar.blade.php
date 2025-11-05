@@ -2,7 +2,7 @@
 <header>
     <ul class='navigation-bar'>
         <li>
-            <a href="{{route('notes.index')}}">Dashboard</a>
+            <a href="{{route('notebook.index')}}">Dashboard</a>
         </li>
         <li>
             <a href="{{route('notes.create')}}">Create note</a>

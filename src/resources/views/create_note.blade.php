@@ -24,6 +24,17 @@
             ></textarea>
         </div>
 
+        <div>
+            <label for="chapter_id">Chapter</label>
+            <select name="chapter_id" id="chapter_id">
+                @foreach ($chapters as $chapter)
+                    <option value="{{$chapter->id}}">
+                        {{$chapter->name}}
+                    </option>    
+                @endforeach
+            </select>
+        </div>
+
         <div class="flex justify-end">
             <input type="submit" class="btn mt-4" />
         </div>
