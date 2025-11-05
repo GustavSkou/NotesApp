@@ -55,7 +55,7 @@ class NoteController extends Controller
         ]);
 
         Note::create($validated);
-        return redirect()->route('dashboard.index')->with('success', 'Created new note');
+        return redirect()->route('notebook.index')->with('success', 'Created new note');
     }
 
     public function update(Request $request, Note $note)
@@ -65,6 +65,6 @@ class NoteController extends Controller
             'contents' => 'max:1000',
         ]);
         $note->update($validated);
-        return redirect()->route('dashboard.index')->with('success', 'Updated note');
+        return redirect()->route('notebook.index')->with('success', 'Updated note');
     }
 }

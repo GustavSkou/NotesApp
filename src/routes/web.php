@@ -1,15 +1,22 @@
 <?php
 
 use App\Http\Controllers\ChapterController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NoteBookController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
-use App\Models\Chapter;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
-    return redirect()->route('notebook.index');
+    return redirect()->route('show.register');
 });
+
+Route::get('/login', [AuthController::class, 'ShowLogin'])->name('show.login');
+Route::get('/register', [AuthController::class, 'ShowRegister'])->name('show.register');
+
+Route::post('/register', [AuthController::class, 'Register'])->name('register');
+Route::post('/login', [AuthController::class, 'Login'])->name('login');
+
+Route::post('/logout', [AuthController::class, 'LogOut'])->name('logout');
 
 Route::get('/notebooks', [NoteBookController::class, 'index'])->name('notebook.index');             //show all notebook
 Route::get('/notebooks/{notebook}/chapters', [ChapterController::class, 'index'])->name('chapter.index');    //show all chapter under notebook
