@@ -1,5 +1,5 @@
 <x-html_body>
-    <div class="min-h-screen flex items-center justify-center">
+    <div class="min-h-screen flex flex-col items-center justify-center">
         <form action="{{route('login')}}" method="post" class="max-w-md mx-auto mt-8 flex flex-col gap-4">
             @csrf
             <div class="flex flex-col">
@@ -35,5 +35,8 @@
             @endif
 
         </form>
+
+        <label>Don't have an account?</label>
+        <a href="{{route('show.register')}}">Register</a>
     </div>
 </x-html_body>
