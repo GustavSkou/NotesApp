@@ -5,10 +5,15 @@ use App\Http\Controllers\NoteBookController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\AuthController;
+use App\http\controllers\ApiController;
 
 Route::get('/', function () {
     return redirect()->route('show.register');
 });
+Route::get('/status/batch', [ApiController::class, 'getBatchStatus']);
+Route::get('/test', function () {
+    return view('test');
+})->name('test');
 
 Route::get('/login', [AuthController::class, 'ShowLogin'])->name('show.login');
 Route::get('/register', [AuthController::class, 'ShowRegister'])->name('show.register');
